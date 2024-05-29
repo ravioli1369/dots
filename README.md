@@ -2,8 +2,8 @@
 
 ## requirements 
 
-> git
-> stow
+- git
+- stow
 
 ## installation
 
