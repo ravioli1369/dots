@@ -1,0 +1,230 @@
+[
+{
+    "name": "top_bar",
+        "layer": "top", // Waybar at top layer
+        "position": "top", // Waybar position (top|bottom|left|right)
+        "height": 36, // Waybar height (to be removed for auto height)
+        "spacing": 8, // Gaps between modules (4px)
+        "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+        "modules-center": ["clock#time", "custom/separator", "clock#calendar", "custom/separator", "cpu", "memory", "disk" ],
+        "modules-right": [ "wlr/taskbar", "custom/media", "network", "pulseaudio", "custom/dunst", "custom/logout_menu" ],
+
+        // Modules Config
+        "hyprland/workspaces": {
+            "on-click": "activate",  
+            "format": "{icon}",
+            "format-icons": {
+                "1": "󰲠",
+                "2": "󰲢",
+                "3": "󰲤",
+                "4": "󰲦",
+                "5": "󰲨",
+                "6": "󰲪",
+                "7": "󰲬",
+                "8": "󰲮",
+                "9": "󰲰",
+                "10": "󰿬",
+
+                "active": "",
+                "default": "",
+                "empty": ""
+            },
+            "persistent-workspaces": {
+                "*": 5,  
+            },
+        },
+
+        "hyprland/submap": {
+            "format": "<span color='#a6da95'>Mode:</span> {}",
+            "tooltip": false,
+        },
+
+        "clock#time": {
+            "format": "{:%I:%M %p}",
+            "locale": "en_US.UTF-8",
+            "timezones": [ "Asia/Kolkata" ],
+        },
+
+        "custom/separator": {
+            "format": "|",  
+        },
+
+        "clock#calendar": {
+            "format": "{:%a, %h %d}",
+            "tooltip-format": "<tt><small>{calendar}</small></tt>",
+            "actions": {
+                "on-click-right": "mode",
+            },
+            "calendar": {
+                "mode"          : "month",
+                "mode-mon-col"  : 3,
+                "weeks-pos"     : "right",
+                "on-scroll"     : 1,
+                "on-click-right": "mode",
+                "format": {
+                    "months":     "<span color='#f4dbd6'><b>{}</b></span>",
+                    "days":       "<span color='#cad3f5'><b>{}</b></span>",
+                    "weeks":      "<span color='#c6a0f6'><b>W{}</b></span>",
+                    "weekdays":   "<span color='#a6da95'><b>{}</b></span>",
+                    "today":      "<span color='#8bd5ca'><b><u>{}</u></b></span>"
+                }
+            },
+        },
+
+        "cpu": {
+            "format": "󰻠 {usage}% ",
+            "states": {
+                "high": 90,
+                "upper-medium": 70,
+                "medium": 50,
+                "lower-medium": 30,
+                "low": 10,
+            },
+            "on-click": "wezterm start btop",
+            "on-click-right": "wezterm start btm",
+        },
+
+        "memory": {
+            "format": " {percentage}% ",
+            "tooltip-format": "Main: ({used} GiB/{total} GiB)({percentage}%), available {avail} GiB\nSwap: ({swapUsed} GiB/{swapTotal} GiB)({swapPercentage}%), available {swapAvail} GiB",
+            "states": {
+                "high": 90,
+                "upper-medium": 70,
+                "medium": 50,
+                "lower-medium": 30,
+                "low": 10,
+            },
+            "on-click": "wezterm start btop",
+            "on-click-right": "wezterm start btm",
+        },
+
+        "disk": {
+            "format": "󰋊 {percentage_used}%",  
+            "tooltip-format": "({used}/{total})({percentage_used}%) in '{path}', available {free}({percentage_free}%)",
+            "states": {
+                "high": 90,
+                "upper-medium": 70,
+                "medium": 50,
+                "lower-medium": 30,
+                "low": 10,
+            },
+            "on-click": "wezterm start btop",
+            "on-click-right": "wezterm start btm",
+        },
+
+
+        "wlr/taskbar": {
+            "format": "{icon}",
+            "icon-size": 25,
+            //"icon-theme": "Numix-Circle",
+            "icon-theme": "Obsidian",
+            "tooltip-format": "{title}",
+            "on-click": "activate",
+            "on-click-right": "close",
+            "on-click-middle": "fullscreen",
+        },
+
+        "custom/media": {
+            "format": "{icon}",
+            "restart-interval": 2,
+            "return-type": "json",
+            "format-icons": {
+                "Playing": "  ",
+                "Paused": "  ",
+            },
+            "max-length": 35,
+            "exec": "fish -c fetch_media_player",
+            "on-click": "playerctl play-pause",
+            "on-click-right": "playerctl next",
+            "on-click-middle": "playerctl prev",
+        },
+
+        // "bluetooth": {
+        //     "format": "󰂯",
+        //     "format-disabled": "󰂲",
+        //     "format-connected": "󰂱 {device_alias}",
+        //    "format-connected-battery": "󰂱 {device_alias} (󰥉 {device_battery_percentage}%)",
+        //     // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        //     "tooltip-format": "{controller_alias}\t{controller_address} ({status})\n\n{num_connections} connected",
+        //     "tooltip-format-disabled": "bluetooth off",
+        //     "tooltip-format-connected": "{controller_alias}\t{controller_address} ({status})\n\n{num_connections} connected\n\n{device_enumerate}",
+        //     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        //     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t({device_battery_percentage}%)",
+        //     "max-length": 35,
+        //     "on-click": "fish -c bluetooth_toggle",
+        //     "on-click-right": "blueman-manager",
+        // },
+
+        "network": {
+            "tooltip-format-disconnected": "<span color='#ed8796'>disconnected</span>",
+            "format-ethernet": "<span color='#a6da95'>󰈀  {ipaddr}</span>",
+            "format-linked": "󰈀  {ifname} (No IP)",
+            "tooltip-format-ethernet":"Interface: {ifname}\nIP: {ipaddr}\nGW: {gwaddr}\nNetmask: {netmask}\nCIDR: {cidr}\n\n<span color='#a6da95'>{bandwidthUpBits}</span>\t<span color='#ee99a0'>{bandwidthDownBits}</span>\t<span color='#c6a0f6'>󰹹{bandwidthTotalBits}</span>",
+            "max-length": 35,
+            "on-click": "fish -c internet_toggle",
+            "on-click-right": "wezterm start nmtui",
+        },
+
+        "pulseaudio": {
+            "states": {
+                "high": 90,
+                "upper-medium": 70,
+                "medium": 50,
+                "lower-medium": 30,
+                "low": 10,
+            },
+            "tooltip-format": "{desc}",
+            "format": "{icon} {volume}%",  
+            "format-bluetooth": "󰂱{icon}{volume}%\n{format_source}",
+            "format-bluetooth-muted": "󰂱󰝟{volume}%\n{format_source}",
+            "format-muted": "󰝟{volume}%\n{format_source}",
+            "format-source": "󰍬{volume}%",
+            "format-source-muted": "󰍭{volume}%",
+            "format-icons": {
+                "headphone": "󰋋",
+                "hands-free": "",
+                "headset": "󰋎",
+                "phone": "󰄜",
+                "portable": "󰦧",
+                "car": "󰄋",
+                "speaker": "󰓃",
+                "hdmi": "󰡁",
+                "hifi": "󰋌",
+                "default": [
+                    "󰕿",
+                "󰖀",
+                "󰕾",
+                ],
+            },
+            "reverse-scrolling": true,
+            "reverse-mouse-scrolling": true,
+            "on-click": "pavucontrol",
+        },
+
+        "custom/dunst": {
+            "return-type": "json",
+            "exec": "fish -c dunst_pause",
+            "on-click": "dunstctl set-paused toggle",
+            "restart-interval": 1,
+        },
+
+        "idle_inhibitor": {
+            "orientation": "horizontal",
+            "format": "{icon}",
+            "format-icons": {
+                "activated": "󰛐",
+                "deactivated": "󰛑"
+            },
+            "tooltip-format-activated": "idle-inhibitor <span color='#a6da95'>on</span>",
+            "tooltip-format-deactivated": "idle-inhibitor <span color='#ee99a0'>off</span>",
+            "start-activated": true,
+        },
+
+        "custom/logout_menu": {
+            "return-type": "json",
+            "exec": "echo '{ \"text\":\"󰐥\", \"tooltip\": \"logout menu\" }'",
+            "interval": "once",
+            "on-click": "fish -c wlogout_unique",
+        },
+},
+    ]
