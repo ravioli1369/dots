@@ -5,11 +5,11 @@ function dunst_pause
     set DISABLED "{ \"text\": \"󰪑\", \"tooltip\": \"notifications <span color='#ee99a0'>off</span>\", \"class\": \"off\" }"
     
     if [ $COUNT_DISPLAYED != 0 ]
-        set ENABLED "{ \"text\": \"󰂚$COUNT_DISPLAYED\", \"tooltip\": \"$COUNT_DISPLAYED notifications\", \"class\": \"on\" }"
+        set ENABLED "{ \"text\": \"󰂚 $COUNT_DISPLAYED\", \"tooltip\": \"$COUNT_DISPLAYED notifications\", \"class\": \"on\" }"
     end
 
     if [ $COUNT_WAITING != 0 ]
-        set DISABLED "{ \"text\": \"󰂛$COUNT_WAITING\", \"tooltip\": \"(silent) $COUNT_WAITING notifications\", \"class\": \"off\" }"
+        set DISABLED "{ \"text\": \"󰂛 $COUNT_WAITING\", \"tooltip\": \"(silent) $COUNT_WAITING notifications\", \"class\": \"off\" }"
     end
 
     if dunstctl is-paused | rg -q "false"
