@@ -34,5 +34,5 @@ $ stow .
 ```
 
 ## acknowledgements
-this theme is based on the NixOS Hyperland config of [XNM1](https://github.com/XNM1/linux-nixos-hyprland-config-dotfiles).
+this rice is based on the NixOS Hyperland config of [XNM1](https://github.com/XNM1/linux-nixos-hyprland-config-dotfiles).
 wallpapers were taken from [accmeboot](https://github.com/accmeboot/dotfiles) and [l6174](https://github.com/l6174/hyprdots)'s repos along with a good chunck of images i've collected or shot myself over the years.
