@@ -1,5 +1,3 @@
-#source $(dirname $(gem which colorls))/tab_complete.sh
-
 set fish_greeting # disable fish startup greeting
 
 # initialize starship
