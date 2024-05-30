@@ -12,6 +12,7 @@ alias ".."="cd .."
 alias "..."="cd ../.."
 alias "ls"="colorls"
 alias "tree"="colorls --tree"
+alias "rm"="rmtrash"
 
 # growth
 alias airmass='~/miniconda3/envs/idk/bin/python3 ~/Documents/airmass.py'
