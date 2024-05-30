@@ -10,6 +10,9 @@
 
 </div>
 
+![Showcase 1](assets/showcase-1.png)
+
+
 ## requirements 
 
 - git
