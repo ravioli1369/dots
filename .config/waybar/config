@@ -80,8 +80,8 @@
                 "lower-medium": 30,
                 "low": 10,
             },
-            "on-click": "wezterm start btop",
-            "on-click-right": "wezterm start btm",
+            "on-click": "alacritty -e btop",
+            "on-click-right": "alacritty -e btm",
         },
 
         "memory": {
@@ -94,8 +94,8 @@
                 "lower-medium": 30,
                 "low": 10,
             },
-            "on-click": "wezterm start btop",
-            "on-click-right": "wezterm start btm",
+            "on-click": "alacritty -e btop",
+            "on-click-right": "alacritty -e btm",
         },
 
         "disk": {
@@ -108,15 +108,14 @@
                 "lower-medium": 30,
                 "low": 10,
             },
-            "on-click": "wezterm start btop",
-            "on-click-right": "wezterm start btm",
+            "on-click": "alacritty -e btop",
+            "on-click-right": "alacritty -e btm",
         },
 
 
         "wlr/taskbar": {
             "format": "{icon}",
             "icon-size": 25,
-            //"icon-theme": "Numix-Circle",
             "icon-theme": "Obsidian",
             "tooltip-format": "{title}",
             "on-click": "activate",
@@ -162,7 +161,7 @@
             "tooltip-format-ethernet":"Interface: {ifname}\nIP: {ipaddr}\nGW: {gwaddr}\nNetmask: {netmask}\nCIDR: {cidr}\n\n<span color='#a6da95'>{bandwidthUpBits}</span>\t<span color='#ee99a0'>{bandwidthDownBits}</span>\t<span color='#c6a0f6'>󰹹{bandwidthTotalBits}</span>",
             "max-length": 35,
             "on-click": "fish -c internet_toggle",
-            "on-click-right": "wezterm start nmtui",
+            "on-click-right": "alacritty -e nmtui",
         },
 
         "pulseaudio": {
