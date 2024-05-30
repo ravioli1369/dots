@@ -2,9 +2,12 @@
 <h1 align="center">Arch (btw) & Hyprland + Catppuccin Mocha</h1>
 
 <div align="center">
-    ![hyprland](https://img.shields.io/badge/hyprland-stable-informational.svg?style=flat&logo=wayland&logoColor=eed49f&colorA=24273A&colorB=91d7e3)
-    ![alacritty](https://img.shields.io/badge/alacritty-F46D01?style=for-the-badge&logo=alacritty&logoColor=white)
-    ![starship](https://img.shields.io/badge/starship-DD0B78?style=for-the-badge&logo=starship&logoColor=white)
+
+![arch](https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)
+![hyprland](https://img.shields.io/badge/hyprland-FFBC00?style=for-the-badge&logo=wayland&logoColor=white)
+![starship](https://img.shields.io/badge/starship-DD0B78?style=for-the-badge&logo=starship&logoColor=white)
+![python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+
 </div>
 
 ## requirements 
