@@ -22,7 +22,7 @@ $haskell\
 [](fg:teal bg:blue)\
 $docker_context\
 [](fg:blue bg:purple)\
-$time\
+$cmd_duration\
 [](fg:purple)\
 $line_break$character"""
 add_newline = true
@@ -177,12 +177,17 @@ format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 [python]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( ${virtualenv}) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [docker_context]
 symbol = ""
 style = "bg:mantle"
 format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+
+[cmd_duration]
+disabled = false
+style = "bg:peach"
+format = '[[  $duration ](fg:mantle bg:purple)]($style)'
 
 [time]
 disabled = false
@@ -201,3 +206,4 @@ vimcmd_symbol = '[](bold fg:creen)'
 vimcmd_replace_one_symbol = '[](bold fg:purple)'
 vimcmd_replace_symbol = '[](bold fg:purple)'
 vimcmd_visual_symbol = '[](bold fg:lavender)'
+
