@@ -12,7 +12,7 @@ alias ".."="cd .."
 alias "..."="cd ../.."
 alias "ls"="colorls"
 alias "tree"="colorls --tree"
-alias "rm"="rmtrash"
+#alias "rm"="rmtrash"
 alias "vpn"="cd /etc/openvpn/ && sudo openvpn IITBADV.ovpn"
 
 # growth
